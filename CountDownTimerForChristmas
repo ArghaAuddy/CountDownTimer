@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-image: linear-gradient(#16bffd, blueviolet);
+      }
+      p {
+        height: 100px;
+        width: 200px;
+        background-image: linear-gradient(orange, red);
+        color: antiquewhite;
+        line-height: 100px;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <pre
+        style="
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+            sans-serif;
+        "
+      ><center>CHRISTMAS COUNTDOWN TIMER.</center></pre>
+      <p id="demo"></p>
+      <br /><br />
+      <pre>Name: Argha Auddy</pre>
+      <pre>Email Id: arghaauddy3@gmail.com</pre>
+    </div>
+
+    <script>
+      var dest = new Date("December 25,2023  00:00:00").getTime();
+      var x = setInterval(function () {
+        var pres = new Date().getTime();
+        var diff = dest - pres;
+        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        console.log(days);
+        var hours = Math.floor(
+          (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        console.log(hours);
+        var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        console.log(minutes);
+        var second = Math.floor((diff % (1000 * 60)) / 1000);
+        console.log(second);
+        document.getElementById("demo").innerHTML =
+          days + "d, " + hours + "hrs: " + minutes + "min: " + second + "sec ";
+      }, 1000);
+    </script>
+  </body>
+</html>
